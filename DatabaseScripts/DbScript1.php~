@@ -1,0 +1,11 @@
+<html>
+<body>
+
+<?php
+	echo 'create db version' ;
+	echo 'check for existing before' ;
+	echo 'select table_name from information_schema.tables where table_schema = ''local_accounts_db'' and table_name=''database_version''';
+		
+?>
+</body>
+</html>

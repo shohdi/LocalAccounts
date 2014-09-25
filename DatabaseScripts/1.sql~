@@ -1,0 +1,16 @@
+if (select table_name from information_schema.tables where table_schema = 'local_accounts_db' and table_name='database_version').empty()
+then
+
+	create table  database_version
+	(
+		id int not null AUTO_INCREMENT
+		, sql_desc varchar(400) not null
+		, created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+		, modified timestamp NULL
+		,primary key (`id`)
+	) ENGINE=InnoDB ;
+
+	insert into database_version (sql_desc) values ('create version table');
+else
+	print('not executed');
+end if
