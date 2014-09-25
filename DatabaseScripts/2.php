@@ -55,7 +55,7 @@
 							
 						) ENGINE=InnoDB ;";
 			$db->exec($query);
-			$query = "insert into database_version (sql_desc) values ('create admin_user table');";
+			$query = "insert into database_version (id,sql_desc) values (2,'create admin_user table');";
 			$db->exec($query);
 		}
 		else
