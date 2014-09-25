@@ -37,6 +37,8 @@
 		$version = $result['last_version'][0];
 		echo "version : ".$version."<br />";
 		
+		$exepectedVersion = 1;	
+		
 		if ($foundRows <= 0)
 		{
 			echo "not executed no rows.<br/>";

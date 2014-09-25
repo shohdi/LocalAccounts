@@ -37,11 +37,13 @@
 		$version = $result['last_version'][0];
 		echo "version : ".$version."<br />";
 		
+		$exepectedVersion = 1;	
+		
 		if ($foundRows <= 0)
 		{
 			echo "not executed no rows.<br/>";
 		}
-		else if ($version == 1)
+		else if ($version == $exepectedVersion)
 		{
 			echo "start execute : <br />";
 			$query = "create table  admin_user
@@ -55,7 +57,7 @@
 							
 						) ENGINE=InnoDB ;";
 			$db->exec($query);
-			$query = "insert into database_version (id,sql_desc) values (2,'create admin_user table');";
+			$query = "insert into database_version (id,sql_desc) values ($exepectedVersion + 1,'create admin_user table');";
 			$db->exec($query);
 		}
 		else
