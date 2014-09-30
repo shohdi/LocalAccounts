@@ -46,10 +46,10 @@
 		else if ($version == $exepectedVersion)
 		{
 			echo "start execute : <br />";
-			$query = "create table  admin_user
+			$query = "create table  admin_users
 						(
 							id int not null AUTO_INCREMENT primary key
-							, email varchar(400) not null
+							, username varchar(400) not null
 							, password varchar(400) not null
 							, full_name varchar(400) not null
 							, created timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -57,7 +57,7 @@
 							
 						) ENGINE=InnoDB ;";
 			$db->exec($query);
-			$query = "insert into database_version (id,sql_desc) values ($exepectedVersion + 1,'create admin_user table');";
+			$query = "insert into database_version (id,sql_desc) values ($exepectedVersion + 1,'create admin_users table');";
 			$db->exec($query);
 		}
 		else
